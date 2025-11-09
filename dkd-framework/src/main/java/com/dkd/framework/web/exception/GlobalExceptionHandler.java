@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Objects;
 
 /**
  * 全局异常处理器
@@ -132,7 +133,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(DataIntegrityViolationException.class)
     public AjaxResult handelDataIntegrityViolationException(DataIntegrityViolationException e) {
 
-        if (e.getMessage().contains("foreign")) {
+        if (Objects.requireNonNull(e.getMessage()).contains("foreign")) {
 
             return AjaxResult.error("无法删除，有其他数据引用");
         }
