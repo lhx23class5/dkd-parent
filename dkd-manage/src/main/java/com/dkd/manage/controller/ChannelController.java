@@ -107,7 +107,7 @@ public class ChannelController extends BaseController {
     @PreAuthorize("@ss.hasPermi('manage:channel:edit')")
     @Log(title = "售货机货道", businessType = BusinessType.UPDATE)
     @PutMapping("/config")
-    public AjaxResult setChannel(@RequestBody gitChannelConfigDto channelConfigDto) {
+    public AjaxResult setChannel(@RequestBody ChannelConfigDto channelConfigDto) {
         return toAjax(channelService.setChannel(channelConfigDto));
     }
 
