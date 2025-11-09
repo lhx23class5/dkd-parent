@@ -84,7 +84,6 @@ public class RegionServiceImpl implements IRegionService {
     /**
      * 查询区域管理列表
      *
-     * @param region
      * @return RegionVo集合
      */
     @Override
