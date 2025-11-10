@@ -7,7 +7,7 @@ import com.dkd.manage.domain.VendingMachine;
  * 设备管理Mapper接口
  * 
  * @author ruoyi
- * @date 2025-11-10
+ * @date 2025-11-07
  */
 public interface VendingMachineMapper 
 {

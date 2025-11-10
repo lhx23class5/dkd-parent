@@ -9,7 +9,7 @@ import com.dkd.common.core.domain.BaseEntity;
  * 区域管理对象 tb_region
  * 
  * @author ruoyi
- * @date 2025-11-01
+ * @date 2025-10-13
  */
 public class Region extends BaseEntity
 {

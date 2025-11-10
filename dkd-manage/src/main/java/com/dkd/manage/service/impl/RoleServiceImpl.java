@@ -1,20 +1,21 @@
 package com.dkd.manage.service.impl;
 
 import java.util.List;
+
+import com.dkd.manage.domain.Role;
+import com.dkd.manage.mapper.RoleMapper;
+import com.dkd.manage.service.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.dkd.manage.mapper.RoleMapper;
-import com.dkd.manage.domain.Role;
-import com.dkd.manage.service.IRoleService;
 
 /**
  * 工单角色Service业务层处理
  * 
  * @author ruoyi
- * @date 2025-11-10
+ * @date 2025-11-07
  */
 @Service
-public class RoleServiceImpl implements IRoleService 
+public class RoleServiceImpl implements IRoleService
 {
     @Autowired
     private RoleMapper roleMapper;

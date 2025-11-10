@@ -1,69 +1,68 @@
 package com.dkd.manage.mapper;
 
+import java.util.List;
 import com.dkd.manage.domain.Emp;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Update;
 
-import java.util.List;
-
 /**
- * 工单员工Mapper接口
- *
+ * 人员列表Mapper接口
+ * 
  * @author ruoyi
- * @date 2025-11-10
+ * @date 2025-10-27
  */
-public interface EmpMapper {
+public interface EmpMapper 
+{
     /**
-     * 查询工单员工
-     *
-     * @param id 工单员工主键
-     * @return 工单员工
+     * 查询人员列表
+     * 
+     * @param id 人员列表主键
+     * @return 人员列表
      */
-    Emp selectEmpById(Long id);
+    public Emp selectEmpById(Long id);
 
     /**
-     * 查询工单员工列表
-     *
-     * @param emp 工单员工
-     * @return 工单员工集合
+     * 查询人员列表列表
+     * 
+     * @param emp 人员列表
+     * @return 人员列表集合
      */
-    List<Emp> selectEmpList(Emp emp);
+    public List<Emp> selectEmpList(Emp emp);
 
     /**
-     * 新增工单员工
-     *
-     * @param emp 工单员工
+     * 新增人员列表
+     * 
+     * @param emp 人员列表
      * @return 结果
      */
-    int insertEmp(Emp emp);
+    public int insertEmp(Emp emp);
 
     /**
-     * 修改工单员工
-     *
-     * @param emp 工单员工
+     * 修改人员列表
+     * 
+     * @param emp 人员列表
      * @return 结果
      */
-    int updateEmp(Emp emp);
+    public int updateEmp(Emp emp);
 
     /**
-     * 删除工单员工
-     *
-     * @param id 工单员工主键
+     * 删除人员列表
+     * 
+     * @param id 人员列表主键
      * @return 结果
      */
-    int deleteEmpById(Long id);
+    public int deleteEmpById(Long id);
 
     /**
-     * 批量删除工单员工
-     *
+     * 批量删除人员列表
+     * 
      * @param ids 需要删除的数据主键集合
      * @return 结果
      */
-    int deleteEmpByIds(Long[] ids);
+    public int deleteEmpByIds(Long[] ids);
 
     /**
      * 根据区域id修改区域名称
-     *
      * @param regionName
      * @param regionId
      * @return 结果

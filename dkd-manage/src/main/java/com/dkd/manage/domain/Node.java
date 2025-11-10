@@ -9,7 +9,7 @@ import com.dkd.common.core.domain.BaseEntity;
  * 点位管理对象 tb_node
  * 
  * @author ruoyi
- * @date 2025-11-01
+ * @date 2025-10-13
  */
 public class Node extends BaseEntity
 {

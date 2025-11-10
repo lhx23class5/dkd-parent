@@ -40,6 +40,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="vmTypeId != null "> and vm_type_id = #{vmTypeId}</if>
             <if test="vmStatus != null "> and vm_status = #{vmStatus}</if>
             <if test="runningStatus != null  and runningStatus != ''"> and running_status = #{runningStatus}</if>
+            <if test="clientId != null  and clientId != ''"> and client_id = #{clientId}</if>
             <if test="policyId != null "> and policy_id = #{policyId}</if>
         </where>
     </select>

@@ -9,7 +9,7 @@ import com.dkd.common.core.domain.BaseEntity;
  * 设备类型管理对象 tb_vm_type
  * 
  * @author ruoyi
- * @date 2025-11-10
+ * @date 2025-11-07
  */
 public class VmType extends BaseEntity
 {

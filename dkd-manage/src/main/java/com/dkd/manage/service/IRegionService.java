@@ -8,7 +8,7 @@ import com.dkd.manage.domain.vo.RegionVo;
  * 区域管理Service接口
  * 
  * @author ruoyi
- * @date 2025-11-01
+ * @date 2025-10-13
  */
 public interface IRegionService 
 {
@@ -60,5 +60,11 @@ public interface IRegionService
      */
     public int deleteRegionById(Long id);
 
-    List<RegionVo> selectRegionVoList(Region region);
+    /**
+     * 查询区域管理列表
+     *
+     * @param region
+     * @return RegionVo集合
+     */
+    public List<RegionVo> selectRegionVoList(Region region);
 }

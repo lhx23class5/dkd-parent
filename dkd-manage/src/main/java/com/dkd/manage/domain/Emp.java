@@ -6,10 +6,10 @@ import com.dkd.common.annotation.Excel;
 import com.dkd.common.core.domain.BaseEntity;
 
 /**
- * 工单员工对象 tb_emp
+ * 人员列表对象 tb_emp
  * 
  * @author ruoyi
- * @date 2025-11-10
+ * @date 2025-10-27
  */
 public class Emp extends BaseEntity
 {
@@ -18,15 +18,15 @@ public class Emp extends BaseEntity
     /** 主键 */
     private Long id;
 
-    /** 员工名称 */
-    @Excel(name = "员工名称")
+    /** 人员名称 */
+    @Excel(name = "人员名称")
     private String userName;
 
     /** 所属区域Id */
     private Long regionId;
 
-    /** 区域名称 */
-    @Excel(name = "区域名称")
+    /** 归属区域 */
+    @Excel(name = "归属区域")
     private String regionName;
 
     /** 角色id */
@@ -47,7 +47,7 @@ public class Emp extends BaseEntity
     private String image;
 
     /** 是否启用 */
-    private Long status;
+    private Integer status;
 
     public void setId(Long id) 
     {
@@ -130,12 +130,12 @@ public class Emp extends BaseEntity
     {
         return image;
     }
-    public void setStatus(Long status) 
+    public void setStatus(Integer status) 
     {
         this.status = status;
     }
 
-    public Long getStatus() 
+    public Integer getStatus() 
     {
         return status;
     }

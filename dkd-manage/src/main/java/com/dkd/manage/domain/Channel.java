@@ -11,7 +11,7 @@ import com.dkd.common.core.domain.BaseEntity;
  * 售货机货道对象 tb_channel
  * 
  * @author ruoyi
- * @date 2025-11-10
+ * @date 2025-11-07
  */
 public class Channel extends BaseEntity
 {

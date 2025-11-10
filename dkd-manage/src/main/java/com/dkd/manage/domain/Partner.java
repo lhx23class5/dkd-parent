@@ -9,7 +9,7 @@ import com.dkd.common.core.domain.BaseEntity;
  * 合作商管理对象 tb_partner
  * 
  * @author ruoyi
- * @date 2025-11-01
+ * @date 2025-10-13
  */
 public class Partner extends BaseEntity
 {

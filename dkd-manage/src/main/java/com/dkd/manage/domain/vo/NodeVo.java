@@ -1,5 +1,6 @@
 package com.dkd.manage.domain.vo;
 
+
 import com.dkd.manage.domain.Node;
 import com.dkd.manage.domain.Partner;
 import com.dkd.manage.domain.Region;

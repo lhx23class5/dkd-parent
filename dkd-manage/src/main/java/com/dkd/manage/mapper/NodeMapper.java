@@ -1,20 +1,20 @@
 package com.dkd.manage.mapper;
 
+import java.util.List;
 import com.dkd.manage.domain.Node;
 import com.dkd.manage.domain.vo.NodeVo;
 
-import java.util.List;
-
 /**
  * 点位管理Mapper接口
- *
+ * 
  * @author ruoyi
- * @date 2025-11-01
+ * @date 2025-10-13
  */
-public interface NodeMapper {
+public interface NodeMapper 
+{
     /**
      * 查询点位管理
-     *
+     * 
      * @param id 点位管理主键
      * @return 点位管理
      */
@@ -22,7 +22,7 @@ public interface NodeMapper {
 
     /**
      * 查询点位管理列表
-     *
+     * 
      * @param node 点位管理
      * @return 点位管理集合
      */
@@ -30,7 +30,7 @@ public interface NodeMapper {
 
     /**
      * 新增点位管理
-     *
+     * 
      * @param node 点位管理
      * @return 结果
      */
@@ -38,7 +38,7 @@ public interface NodeMapper {
 
     /**
      * 修改点位管理
-     *
+     * 
      * @param node 点位管理
      * @return 结果
      */
@@ -46,7 +46,7 @@ public interface NodeMapper {
 
     /**
      * 删除点位管理
-     *
+     * 
      * @param id 点位管理主键
      * @return 结果
      */
@@ -54,15 +54,13 @@ public interface NodeMapper {
 
     /**
      * 批量删除点位管理
-     *
+     * 
      * @param ids 需要删除的数据主键集合
      * @return 结果
      */
     public int deleteNodeByIds(Long[] ids);
-
     /**
      * 查询点位管理列表
-     *
      * @param node
      * @return NodeVo集合
      */

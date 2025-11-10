@@ -1,33 +1,34 @@
 package com.dkd.manage.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cn.hutool.core.bean.BeanUtil;
 import com.dkd.common.constant.DkdContants;
 import com.dkd.common.utils.DateUtils;
 import com.dkd.common.utils.uuid.UUIDUtils;
 import com.dkd.manage.domain.Channel;
 import com.dkd.manage.domain.Node;
-import com.dkd.manage.domain.VendingMachine;
 import com.dkd.manage.domain.VmType;
-import com.dkd.manage.mapper.VendingMachineMapper;
 import com.dkd.manage.service.IChannelService;
 import com.dkd.manage.service.INodeService;
 import com.dkd.manage.service.IVendingMachineService;
 import com.dkd.manage.service.IVmTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.dkd.manage.mapper.VendingMachineMapper;
+import com.dkd.manage.domain.VendingMachine;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 设备管理Service业务层处理
- *
+ * 
  * @author ruoyi
- * @date 2025-11-10
+ * @date 2025-11-07
  */
 @Service
-public class VendingMachineServiceImpl implements IVendingMachineService {
+public class VendingMachineServiceImpl implements IVendingMachineService
+{
     @Autowired
     private VendingMachineMapper vendingMachineMapper;
     @Autowired
@@ -39,23 +40,25 @@ public class VendingMachineServiceImpl implements IVendingMachineService {
 
     /**
      * 查询设备管理
-     *
+     * 
      * @param id 设备管理主键
      * @return 设备管理
      */
     @Override
-    public VendingMachine selectVendingMachineById(Long id) {
+    public VendingMachine selectVendingMachineById(Long id)
+    {
         return vendingMachineMapper.selectVendingMachineById(id);
     }
 
     /**
      * 查询设备管理列表
-     *
+     * 
      * @param vendingMachine 设备管理
      * @return 设备管理
      */
     @Override
-    public List<VendingMachine> selectVendingMachineList(VendingMachine vendingMachine) {
+    public List<VendingMachine> selectVendingMachineList(VendingMachine vendingMachine)
+    {
         return vendingMachineMapper.selectVendingMachineList(vendingMachine);
     }
 
@@ -107,29 +110,6 @@ public class VendingMachineServiceImpl implements IVendingMachineService {
         return result;
     }
 
-
-    /**
-     * 批量删除设备管理
-     *
-     * @param ids 需要删除的设备管理主键
-     * @return 结果
-     */
-    @Override
-    public int deleteVendingMachineByIds(Long[] ids) {
-        return vendingMachineMapper.deleteVendingMachineByIds(ids);
-    }
-
-    /**
-     * 删除设备管理信息
-     *
-     * @param id 设备管理主键
-     * @return 结果
-     */
-    @Override
-    public int deleteVendingMachineById(Long id) {
-        return vendingMachineMapper.deleteVendingMachineById(id);
-    }
-
     /**
      * 修改设备管理
      *
@@ -138,14 +118,35 @@ public class VendingMachineServiceImpl implements IVendingMachineService {
      */
     @Override
     public int updateVendingMachine(VendingMachine vendingMachine) {
-        if (vendingMachine.getNodeId() != null) {
-            // 查询点位表，补充：区域、点位、合作商等信息
-            Node node = nodeService.selectNodeById(vendingMachine.getNodeId());
-            BeanUtil.copyProperties(node, vendingMachine, "id");// 商圈类型、区域、合作商
-            vendingMachine.setAddr(node.getAddress());// 设备地址
-        }
+        //查询点位表，补充 区域、点位、合作商等信息
+        Node node = nodeService.selectNodeById(vendingMachine.getNodeId());
+        BeanUtil.copyProperties(node, vendingMachine, "id");// 商圈类型、区域、合作商
+        vendingMachine.setAddr(node.getAddress());// 设备地址
         vendingMachine.setUpdateTime(DateUtils.getNowDate());// 更新时间
         return vendingMachineMapper.updateVendingMachine(vendingMachine);
     }
 
+    /**
+     * 批量删除设备管理
+     * 
+     * @param ids 需要删除的设备管理主键
+     * @return 结果
+     */
+    @Override
+    public int deleteVendingMachineByIds(Long[] ids)
+    {
+        return vendingMachineMapper.deleteVendingMachineByIds(ids);
+    }
+
+    /**
+     * 删除设备管理信息
+     * 
+     * @param id 设备管理主键
+     * @return 结果
+     */
+    @Override
+    public int deleteVendingMachineById(Long id)
+    {
+        return vendingMachineMapper.deleteVendingMachineById(id);
+    }
 }

@@ -1,5 +1,6 @@
 package com.dkd;
 
+import org.dromara.x.file.storage.spring.EnableFileStorage;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,8 +11,9 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  *
  * @author ruoyi
  */
-@MapperScan("com.dkd.manage.mapper")
+@EnableFileStorage
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
+@MapperScan("com.dkd.manage.mapper")
 public class DkdApplication
 {
     public static void main(String[] args)

@@ -11,7 +11,7 @@ import com.dkd.common.core.domain.BaseEntity;
  * 设备管理对象 tb_vending_machine
  * 
  * @author ruoyi
- * @date 2025-11-10
+ * @date 2025-11-07
  */
 public class VendingMachine extends BaseEntity
 {
@@ -65,9 +65,11 @@ public class VendingMachine extends BaseEntity
     private Long latitude;
 
     /** 客户端连接Id,做emq认证用 */
+    @Excel(name = "客户端连接Id,做emq认证用")
     private String clientId;
 
     /** 策略id */
+    @Excel(name = "策略id")
     private Long policyId;
 
     public void setId(Long id) 
